@@ -40,223 +40,612 @@
       --radius-sm: 8px;
     }
 
-    /* ── DARK MODE ── */
-    /* ── DARK MODE VARIABLES ── */
-    [data-theme="dark"] {
-      --ink: #e8eaf0;
-      --ink2: #8b91a8;
+    /* ══════════════════════════════════════════════
+       DARK MODE — comprehensive overrides
+       ══════════════════════════════════════════════ */
+    body.dark {
+      --ink: #e4e6f0;
+      --ink2: #8b90a8;
       --paper: #0f1117;
-      --card: #1a1d27;
-      --accent: #e8604e;
-      --accent-hover: #d94f3d;
-      --accent2: #f0a050;
-      --green: #2ea870;
-      --green-light: #0e2a1e;
-      --red-light: #2a1215;
-      --blue: #5b9ae8;
-      --blue-light: #101d32;
-      --border: #2a2d3e;
-      --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.3);
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-      --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+      --card: #1a1d28;
+      --border: #272b3e;
+      --blue-light: #1a2640;
+      --red-light: #2a1715;
+      --green-light: #122018;
+      --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.4);
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
     }
 
-    /* Login */
-    [data-theme="dark"] #login-screen {
-      background: #0a0c12;
-    }
-
-    [data-theme="dark"] .login-right {
-      background: var(--card);
-    }
-
-    [data-theme="dark"] .login-form-title {
+    /* Body & screens */
+    body.dark {
+      background: var(--paper);
       color: var(--ink);
     }
 
-    [data-theme="dark"] .login-form-sub {
+    /* Nav */
+    body.dark nav {
+      background: var(--card);
+      border-bottom-color: var(--border);
+    }
+
+    body.dark .nav-center {
+      background: var(--paper);
+      border-color: var(--border);
+    }
+
+    body.dark .nav-tab {
       color: var(--ink2);
     }
 
-    [data-theme="dark"] .auth-tab.active {
+    body.dark .nav-tab.active {
+      background: #272b3e;
+      color: var(--ink);
+      box-shadow: none;
+    }
+
+    body.dark .nav-user-chip {
+      background: var(--paper);
+      border-color: var(--border);
+    }
+
+    body.dark .btn-logout {
+      background: var(--paper);
+      border-color: var(--border);
+      color: var(--ink);
+    }
+
+    body.dark .btn-logout:hover {
+      background: var(--border);
+    }
+
+    body.dark .btn-theme {
+      background: var(--paper);
+      border-color: var(--border);
+    }
+
+    /* Login */
+    body.dark .login-screen {
+      background: var(--paper);
+    }
+
+    body.dark .login-left {
+      background: linear-gradient(135deg, #1a1c2a 0%, #0d0f18 100%);
+    }
+
+    body.dark .login-right {
+      background: var(--card);
+    }
+
+    body.dark .login-form-title {
+      color: var(--ink);
+    }
+
+    body.dark .login-form-sub {
+      color: var(--ink2);
+    }
+
+    body.dark .auth-tabs {
+      background: var(--paper);
+      border-color: var(--border);
+    }
+
+    body.dark .auth-tab {
+      color: var(--ink2);
+    }
+
+    body.dark .auth-tab.active {
       background: var(--card);
       color: var(--ink);
     }
 
-    /* Inputs */
-    [data-theme="dark"] .field input,
-    [data-theme="dark"] .form-group input,
-    [data-theme="dark"] .form-group select,
-    [data-theme="dark"] .form-group textarea,
-    [data-theme="dark"] .date-browser input[type="date"],
-    [data-theme="dark"] .bm-filter-group input,
-    [data-theme="dark"] .bm-filter-group select,
-    [data-theme="dark"] #cancel-modal textarea {
-      color-scheme: dark;
+    body.dark .field label {
+      color: var(--ink2);
     }
 
-    [data-theme="dark"] .field input:focus,
-    [data-theme="dark"] .form-group input:focus,
-    [data-theme="dark"] .form-group select:focus,
-    [data-theme="dark"] .form-group textarea:focus {
-      background: #1f2235;
+    body.dark .preview-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.08);
     }
 
-    /* Buttons that use var(--ink) as bg — turn white in dark mode */
-    [data-theme="dark"] .btn-book {
-      background: #2e3248;
-      color: #e8eaf0;
+    body.dark .preview-name {
+      color: var(--ink);
     }
 
-    [data-theme="dark"] .btn-book:hover {
-      background: #3a3f5c;
+    body.dark .preview-sub {
+      color: var(--ink2);
     }
 
-    /* Footer */
-    [data-theme="dark"] .site-footer {
+    /* Stat cards */
+    body.dark .stat-card {
+      background: var(--card);
+      border-color: var(--border);
+    }
+
+    body.dark .stat-label {
+      color: var(--ink2);
+    }
+
+    body.dark .stat-value {
+      color: var(--ink);
+    }
+
+    body.dark .stat-sub {
+      color: var(--ink2);
+    }
+
+    /* Date browser */
+    body.dark .date-browser {
+      background: var(--card);
+      border-color: var(--border);
+    }
+
+    body.dark .date-browser label {
+      color: var(--ink2);
+    }
+
+    body.dark .btn-today {
+      background: var(--paper);
+      border-color: var(--border);
+      color: var(--ink);
+    }
+
+    body.dark .btn-today:hover {
+      background: var(--border);
+    }
+
+    /* Room cards */
+    body.dark .room-card {
+      background: var(--card);
+      border-color: var(--border);
+    }
+
+    body.dark .room-name {
+      color: var(--ink);
+    }
+
+    body.dark .room-capacity {
+      color: var(--ink2);
+    }
+
+    body.dark .feature-tag {
+      background: var(--paper);
+      color: var(--ink2);
+      border-color: var(--border);
+    }
+
+    body.dark .room-schedule-title {
+      color: var(--ink2);
+    }
+
+    body.dark .no-bookings {
+      color: var(--ink2);
+      background: var(--paper);
+    }
+
+    /* Booking slots */
+    body.dark .booking-slot {
+      background: var(--paper);
+      border-color: var(--border);
+    }
+
+    body.dark .booking-slot.slot-own {
+      background: #2a1715;
+      border-color: var(--accent);
+    }
+
+    body.dark .slot-time {
+      color: var(--ink2);
+    }
+
+    body.dark .slot-title {
+      color: var(--ink);
+    }
+
+    body.dark .slot-organizer {
+      color: var(--ink2);
+    }
+
+    body.dark .cancel-btn {
+      background: var(--red-light);
+      color: var(--accent);
+    }
+
+    /* Booking form */
+    body.dark .booking-form-section {
+      background: var(--card);
+      border-color: var(--border);
+    }
+
+    body.dark .form-title {
+      color: var(--ink);
+    }
+
+    body.dark .form-close {
+      color: var(--ink2);
+    }
+
+    body.dark .form-group label {
+      color: var(--ink2);
+    }
+
+    /* Notifications */
+    body.dark .notifications-section {
+      background: var(--card);
+      border-color: var(--border);
+    }
+
+    body.dark .notif-title {
+      color: var(--ink);
+    }
+
+    body.dark .notif-text {
+      color: var(--ink2);
+    }
+
+    body.dark .notif-time {
+      color: var(--ink2);
+    }
+
+    body.dark .notif-item {
+      border-bottom-color: var(--border);
+    }
+
+    /* All inputs, selects, textareas */
+    body.dark input,
+    body.dark select,
+    body.dark textarea {
+      background: var(--paper) !important;
+      color: var(--ink) !important;
+      border-color: var(--border) !important;
+    }
+
+    body.dark input::placeholder,
+    body.dark textarea::placeholder {
+      color: var(--ink2) !important;
+      opacity: 0.7;
+    }
+
+    /* Modals */
+    body.dark #cancel-modal {
+      background: var(--card);
+    }
+
+    body.dark #cancel-modal h3 {
+      color: var(--ink);
+    }
+
+    body.dark #cancel-modal p {
+      color: var(--ink2);
+    }
+
+    body.dark #edit-modal {
+      background: var(--card);
+    }
+
+    body.dark #edit-modal h3 {
+      color: var(--ink);
+    }
+
+    body.dark #profile-modal {
+      background: var(--card);
+    }
+
+    body.dark .btn-cancel-dismiss {
+      background: var(--paper);
+      border-color: var(--border);
+      color: var(--ink);
+    }
+
+    /* Bookings management */
+    body.dark .bm-filters {
+      background: var(--card);
+      border-color: var(--border);
+    }
+
+    body.dark .bm-filter-group label {
+      color: var(--ink2);
+    }
+
+    body.dark .bm-table-wrap {
+      background: var(--card);
+      border-color: var(--border);
+    }
+
+    body.dark .bm-table-header {
+      background: var(--paper);
+      border-bottom-color: var(--border);
+    }
+
+    body.dark .bm-table-header>div {
+      color: var(--ink2);
+    }
+
+    body.dark .bm-row {
+      border-bottom-color: var(--border);
+    }
+
+    body.dark .bm-row:hover {
+      background: var(--paper);
+    }
+
+    body.dark .bm-row-title {
+      color: var(--ink);
+    }
+
+    body.dark .bm-row-sub {
+      color: var(--ink2);
+    }
+
+    body.dark .bm-footer {
+      color: var(--ink2);
+    }
+
+    /* Analytics */
+    body.dark .an-kpi-card {
+      background: var(--card);
+      border-color: var(--border);
+    }
+
+    body.dark .an-kpi-val {
+      color: var(--ink);
+    }
+
+    body.dark .an-kpi-label {
+      color: var(--ink2);
+    }
+
+    body.dark .an-chart-card {
+      background: var(--card);
+      border-color: var(--border);
+    }
+
+    body.dark .an-chart-title {
+      color: var(--ink);
+    }
+
+    body.dark .an-heat-cell {
+      background: var(--paper);
+      color: var(--ink2);
+    }
+
+    body.dark .an-heat-cell span {
+      color: var(--ink);
+    }
+
+    body.dark .an-donut-bg {
+      stroke: var(--border);
+    }
+
+    body.dark .an-booker-row {
+      border-bottom-color: var(--border);
+    }
+
+    body.dark .an-booker-name {
+      color: var(--ink);
+    }
+
+    body.dark .an-booker-count {
+      color: var(--ink2);
+    }
+
+    body.dark .an-booker-bar-bg {
+      background: var(--border);
+    }
+
+    body.dark .an-booker-rank {
+      background: var(--paper);
+      color: var(--ink2);
+    }
+
+    body.dark .an-legend-item {
+      color: var(--ink);
+    }
+
+    body.dark .an-heatmap-legend span {
+      color: var(--ink2) !important;
+    }
+
+    body.dark .an-donut-legend {
+      color: var(--ink);
+    }
+
+    /* People & Rooms / Manage */
+    body.dark .users-list {
+      background: var(--card);
+      border-color: var(--border);
+    }
+
+    body.dark .users-list-header {
+      background: var(--paper);
+      border-bottom-color: var(--border);
+    }
+
+    body.dark .users-list-header>div {
+      color: var(--ink2);
+    }
+
+    body.dark .user-row {
+      border-bottom-color: var(--border);
+    }
+
+    body.dark .user-row:hover {
+      background: var(--paper);
+    }
+
+    body.dark .user-name-text {
+      color: var(--ink);
+    }
+
+    body.dark .user-email {
+      color: var(--ink2);
+    }
+
+    body.dark .user-form-card {
+      background: var(--card);
+      border-color: var(--border);
+    }
+
+    body.dark .btn-add-user {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+    }
+
+    body.dark .btn-icon {
+      background: var(--paper);
+      border-color: var(--border);
+      color: var(--accent);
+    }
+
+    body.dark .room-config-card {
+      background: var(--card);
+      border-color: var(--border);
+    }
+
+    body.dark .rcc-name {
+      color: var(--ink);
+    }
+
+    body.dark .rcc-id {
+      color: var(--ink2);
+    }
+
+    body.dark .rcc-row {
+      border-bottom-color: var(--border);
+      color: var(--ink2);
+    }
+
+    body.dark .rcc-row strong {
+      color: var(--ink);
+    }
+
+    body.dark .section-label {
+      color: var(--ink2);
+      border-bottom-color: var(--border);
+    }
+
+    /* Page headers */
+    body.dark .page-title {
+      color: var(--ink);
+    }
+
+    body.dark .page-subtitle {
+      color: var(--ink2);
+    }
+
+    body.dark .page-header {
+      border-bottom-color: var(--border);
+    }
+
+    body.dark .booking-form-section {
+      background: var(--card);
+      border-color: var(--border);
+    }
+
+    body.dark .form-group label {
+      color: var(--ink2);
+    }
+
+    body.dark .form-group input:focus,
+    body.dark .form-group select:focus,
+    body.dark .form-group textarea:focus {
+      background: var(--paper) !important;
+    }
+
+    body.dark .availability-msg.free {
+      background: var(--green-light);
+    }
+
+    body.dark .availability-msg.busy {
+      background: var(--red-light);
+    }
+
+    body.dark .btn-confirm {
+      background: var(--accent);
+    }
+
+    body.dark .btn-cancel-form {
+      background: var(--paper);
+      border-color: var(--border);
+      color: var(--ink);
+    }
+
+    /* Mobile bottom nav */
+    body.dark #mobile-bottom-nav {
+      background: var(--card);
+      border-top-color: var(--border);
+    }
+
+    body.dark .mob-tab {
+      color: var(--ink2);
+    }
+
+    body.dark .mob-tab.active {
+      color: var(--accent);
+    }
+
+    /* Scrollbar in dark mode */
+    body.dark ::-webkit-scrollbar-track {
+      background: var(--paper);
+    }
+
+    body.dark ::-webkit-scrollbar-thumb {
+      background: var(--border);
+    }
+
+    body.dark .site-footer {
       background: #0a0c12;
       color: rgba(255, 255, 255, 0.25);
     }
 
-    [data-theme="dark"] .site-footer strong {
+    body.dark .site-footer strong {
       color: rgba(255, 255, 255, 0.5);
     }
 
-    /* Toast */
-    [data-theme="dark"] #toast {
-      background: #252836;
-      color: #e8eaf0;
+    body.dark .btn-book {
+      background: #2e3248;
+      color: #e4e6f0;
     }
 
-    /* Notifications / Activity Log */
-    [data-theme="dark"] .notifications-section {
-      background: var(--card);
-      border-color: var(--border);
+    body.dark .btn-book:hover {
+      background: #3a3f5c;
     }
 
-    [data-theme="dark"] .notif-title {
-      color: var(--ink);
-    }
 
-    [data-theme="dark"] .notif-count {
-      background: var(--blue-light);
-      color: var(--blue);
-    }
-
-    [data-theme="dark"] .notif-item {
-      border-bottom-color: var(--border);
-    }
-
-    [data-theme="dark"] .notif-text {
-      color: var(--ink2);
-    }
-
-    [data-theme="dark"] .notif-text strong {
-      color: var(--ink);
-    }
-
-    [data-theme="dark"] .notif-time {
-      color: var(--ink2);
-    }
-
-    /* Room cards */
-    [data-theme="dark"] .feature-tag {
-      background: #252836;
-      border-color: var(--border);
-      color: var(--ink2);
-    }
-
-    [data-theme="dark"] .booking-slot {
-      background: #252836;
-      border-color: var(--border);
-    }
-
-    [data-theme="dark"] .booking-slot:hover {
-      border-color: #3a3f5c;
-    }
-
-    /* Booking management table */
-    [data-theme="dark"] .bm-room-a {
-      background: #2a1215;
+    /* ── SVG ICON COLOR CLASSES ── */
+    .svg-accent {
       color: var(--accent);
     }
 
-    [data-theme="dark"] .bm-room-b {
-      background: #101d32;
+    .svg-blue {
       color: var(--blue);
     }
 
-    [data-theme="dark"] .bm-btn-edit {
-      background: #101d32;
-      color: var(--blue);
-    }
-
-    [data-theme="dark"] .bm-btn-edit:hover {
-      background: #162544;
-    }
-
-    [data-theme="dark"] .bm-btn-cancel {
-      background: #2a1215;
-      color: var(--accent);
-    }
-
-    [data-theme="dark"] .bm-btn-cancel:hover {
-      background: #3a181c;
-    }
-
-    /* Role pills */
-    [data-theme="dark"] .role-admin {
-      background: #2a1215;
-      color: var(--accent);
-    }
-
-    [data-theme="dark"] .role-co-admin {
-      background: #2a1c0c;
-      color: var(--accent2);
-    }
-
-    [data-theme="dark"] .role-user {
-      background: #101d32;
-      color: var(--blue);
-    }
-
-    [data-theme="dark"] .nav-role-badge.admin {
-      background: #2a1215;
-    }
-
-    [data-theme="dark"] .nav-role-badge.co-admin {
-      background: #2a1c0c;
-    }
-
-    /* Analytics */
-    [data-theme="dark"] .an-heat-scale {
-      background: linear-gradient(90deg, #1a1d27, var(--accent));
-    }
-
-    [data-theme="dark"] .an-booker-rank.gold {
-      background: #2a2010;
-      color: #d4a030;
-    }
-
-    /* ── DARK TOGGLE BUTTON ── */
-    .dark-toggle {
+    /* ── DARK MODE TOGGLE BUTTON ── */
+    .btn-theme {
       width: 36px;
       height: 36px;
+      border-radius: 50%;
       border: 1.5px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: transparent;
+      background: var(--paper);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
-      transition: all 0.15s;
+      transition: all 0.2s;
       flex-shrink: 0;
+      padding: 0;
     }
 
-    .dark-toggle:hover {
+    .btn-theme:hover {
       border-color: var(--accent);
-      background: var(--paper);
+      background: var(--card);
+    }
+
+    .btn-theme svg {
+      width: 18px;
+      height: 18px;
     }
 
     body {
@@ -466,7 +855,7 @@
 
     .field input:focus {
       border-color: var(--accent);
-      background: #fff;
+      background: var(--card);
     }
 
     .error-msg {
@@ -640,7 +1029,12 @@
     }
 
     .nav-role-badge.co-admin {
-      background: #fff4e8;
+      background: #fef3e2;
+      color: var(--accent2);
+    }
+
+    body.dark .nav-role-badge.co-admin {
+      background: #2e2010;
       color: var(--accent2);
     }
 
@@ -832,6 +1226,82 @@
       color: var(--accent);
     }
 
+    .badge-closed {
+      background: #f0f0f0;
+      color: #888;
+    }
+    body.dark .badge-closed {
+      background: #2a2a3a;
+      color: #888;
+    }
+
+    .room-card.room-closed {
+      opacity: 0.75;
+      position: relative;
+    }
+    .room-closed-banner {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      background: #f5f5f5;
+      border: 1.5px dashed #ccc;
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      margin-bottom: 12px;
+      font-size: 13px;
+      color: #888;
+      font-weight: 500;
+    }
+    body.dark .room-closed-banner {
+      background: #1e2030;
+      border-color: #444;
+      color: #666;
+    }
+    .room-card.room-closed .room-closed-banner { display: flex; }
+
+    .btn-book.btn-closed {
+      background: #e0e0e0;
+      color: #999;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    body.dark .btn-book.btn-closed {
+      background: #2a2a3a;
+      color: #555;
+    }
+
+    /* toggle switch for admin panel */
+    .room-toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 10px;
+    }
+    .room-toggle-label { font-size: 13px; color: var(--ink2); }
+    .toggle-switch {
+      position: relative; width: 44px; height: 24px; cursor: pointer;
+    }
+    .toggle-switch input { opacity: 0; width: 0; height: 0; }
+    .toggle-track {
+      position: absolute; inset: 0;
+      background: #ccc; border-radius: 24px;
+      transition: background 0.2s;
+    }
+    .toggle-track::before {
+      content: '';
+      position: absolute;
+      width: 18px; height: 18px;
+      left: 3px; top: 3px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.2s;
+    }
+    .toggle-switch input:checked + .toggle-track { background: var(--green); }
+    .toggle-switch input:checked + .toggle-track::before { transform: translateX(20px); }
+    body.dark .toggle-track { background: #444; }
+
     .room-capacity {
       font-size: 12px;
       color: var(--ink2);
@@ -963,7 +1433,109 @@
       transform: scale(0.99);
     }
 
-    /* ── BOOKING FORM ── */
+    /* ── RECURRING BOOKING ── */
+    .recur-section {
+      grid-column: 1 / -1;
+      background: var(--paper);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+    }
+
+    .recur-toggle-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .recur-toggle-row label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      margin: 0;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    /* custom checkbox */
+    .recur-checkbox {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--border);
+      border-radius: 5px;
+      background: var(--card);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.15s;
+    }
+
+    .recur-checkbox.checked {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .recur-checkbox.checked::after {
+      content: '✓';
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .recur-options {
+      display: none;
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.25s ease;
+    }
+
+    .recur-options.open {
+      max-height: 200px;
+    }
+
+    .recur-preview {
+      grid-column: 1 / -1;
+      font-size: 12px;
+      color: var(--green);
+      font-weight: 500;
+      margin-top: 4px;
+      min-height: 16px;
+    }
+
+    /* ── DURATION HINT ── */
+    .duration-hint {
+      font-size: 11px;
+      color: var(--ink2);
+      margin-top: 4px;
+      min-height: 14px;
+    }
+
+    .duration-hint.warn {
+      color: var(--accent);
+    }
+
+    .duration-hint.ok {
+      color: var(--green);
+    }
+
+    /* Dark mode */
+    body.dark .recur-section {
+      background: #1f2235;
+    }
+
+    body.dark .recur-checkbox {
+      background: var(--card);
+    }
+
     .booking-form-section {
       background: var(--card);
       border: 1px solid var(--border);
@@ -1067,7 +1639,7 @@
     .form-group select:focus,
     .form-group textarea:focus {
       border-color: var(--accent);
-      background: #fff;
+      background: var(--card);
     }
 
     .form-group textarea {
@@ -1360,7 +1932,12 @@
     }
 
     .role-co-admin {
-      background: #fff4e8;
+      background: #fef3e2;
+      color: var(--accent2);
+    }
+
+    body.dark .role-co-admin {
+      background: #2e2010;
       color: var(--accent2);
     }
 
@@ -1742,6 +2319,104 @@
         opacity: 1;
         transform: translateY(0);
       }
+    }
+
+    /* ── ENHANCED BOOKING SLOT ── */
+    .booking-slot {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      background: var(--paper);
+      margin-bottom: 8px;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s;
+    }
+
+    .booking-slot.slot-own {
+      border-color: var(--accent);
+      background: #fdf8f7;
+    }
+
+    .slot-main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .slot-top-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 5px;
+    }
+
+    .slot-booker-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .slot-booker-avatar {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .slot-you-tag {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 8px;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+
+    /* ── ROLE SELECT IN ADMIN TABLE ── */
+    .role-select {
+      background: var(--paper);
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .role-select:focus {
+      border-color: var(--accent);
+    }
+
+    /* ── YOU BADGE ── */
+    .you-badge {
+      font-size: 10px;
+      background: var(--green-light);
+      color: var(--green);
+      padding: 1px 6px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-left: 4px;
+    }
+
+    body.dark .you-badge {
+      background: #122018;
+      color: #4caf7d;
     }
 
     /* ── SECTION LABEL ── */
@@ -2323,22 +2998,40 @@
 
   <!-- ═══ LOGIN SCREEN ═══ -->
   <div id="login-screen" class="screen active">
-    <button class="dark-toggle" id="login-dark-toggle" onclick="toggleDarkMode()" title="Toggle dark mode"
-      style="position:absolute;top:20px;right:20px;z-index:10;border-color:rgba(255,255,255,0.2);">🌙</button>
     <div class="login-left">
       <div class="login-left-bg"></div>
       <div class="login-brand">Board<span>Room</span></div>
       <div class="login-tagline">Smart meeting space management for your team.</div>
       <div class="login-rooms-preview">
         <div class="preview-room">
-          <div class="preview-icon">🏛️</div>
+          <div class="preview-icon svg-accent"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+              width="32" height="32">
+              <rect x="8" y="20" width="48" height="28" rx="4" fill="currentColor" opacity="0.15" />
+              <rect x="8" y="20" width="48" height="28" rx="4" stroke="currentColor" stroke-width="2.5" />
+              <rect x="20" y="28" width="24" height="12" rx="2" fill="currentColor" opacity="0.2" />
+              <rect x="20" y="28" width="24" height="12" rx="2" stroke="currentColor" stroke-width="2" />
+              <circle cx="16" cy="34" r="2.5" fill="currentColor" />
+              <circle cx="48" cy="34" r="2.5" fill="currentColor" />
+              <circle cx="32" cy="26" r="2.5" fill="currentColor" />
+              <circle cx="32" cy="42" r="2.5" fill="currentColor" />
+              <line x1="16" y1="48" x2="16" y2="56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+              <line x1="48" y1="48" x2="48" y2="56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+            </svg></div>
           <div class="preview-info">
             <div class="preview-name">Board Room</div>
             <div class="preview-meta">12 seats · Projector · Whiteboard · Conference</div>
           </div>
         </div>
         <div class="preview-room">
-          <div class="preview-icon">💡</div>
+          <div class="preview-icon svg-blue"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+              width="32" height="32">
+              <rect x="10" y="8" width="44" height="48" rx="3" fill="currentColor" opacity="0.12" />
+              <rect x="10" y="8" width="44" height="48" rx="3" stroke="currentColor" stroke-width="2.5" />
+              <rect x="24" y="20" width="16" height="22" rx="2" fill="currentColor" opacity="0.15" />
+              <rect x="24" y="20" width="16" height="22" rx="2" stroke="currentColor" stroke-width="2" />
+              <circle cx="37" cy="32" r="1.8" fill="currentColor" />
+              <line x1="10" y1="56" x2="54" y2="56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+            </svg></div>
           <div class="preview-info">
             <div class="preview-name">Meeting Room</div>
             <div class="preview-meta">6 seats · Smart Board</div>
@@ -2358,10 +3051,10 @@
 
       <!-- SIGN IN -->
       <div class="auth-panel active" id="panel-signin">
-        <div class="error-msg" id="login-error">Invalid email or password. Please try again.</div>
+        <div class="error-msg" id="login-error"></div>
         <div class="field">
           <label>Email address</label>
-          <input type="email" id="login-email" placeholder="you@company.com" autocomplete="username" />
+          <input type="email" id="login-email" placeholder="you@takaful.lk" autocomplete="username" />
         </div>
         <div class="field">
           <label>Password</label>
@@ -2381,7 +3074,7 @@
         </div>
         <div class="field">
           <label>Email address</label>
-          <input type="email" id="signup-email" placeholder="you@company.com" />
+          <input type="email" id="signup-email" placeholder="you@takaful.lk" />
         </div>
         <div class="field">
           <label>Password</label>
@@ -2406,8 +3099,26 @@
           Rooms</button>
       </div>
       <div class="nav-right">
-        <button class="dark-toggle" id="dark-toggle-btn" onclick="toggleDarkMode()" title="Toggle dark mode">🌙</button>
-        <div class="nav-user-chip">
+        <!-- Dark mode toggle -->
+        <button class="btn-theme" id="btn-theme" onclick="toggleTheme()" title="Toggle dark mode">
+          <svg id="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="color:var(--ink2)">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg id="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="color:var(--ink2);display:none">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+        </button>
+        <div class="nav-user-chip" onclick="openProfileModal()" style="cursor:pointer;" title="Edit profile">
           <div class="nav-avatar" id="nav-avatar">?</div>
           <span class="nav-user-name" id="nav-username"></span>
           <span class="nav-role-badge" id="nav-role-badge"></span>
@@ -2504,7 +3215,17 @@
           <div class="room-card" id="room-card-A">
             <div class="room-card-accent"></div>
             <div class="room-header">
-              <div class="room-name">Board Room</div>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <span class="svg-accent"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    width="28" height="28">
+                    <rect x="8" y="20" width="48" height="28" rx="4" fill="currentColor" opacity="0.15" />
+                    <rect x="8" y="20" width="48" height="28" rx="4" stroke="currentColor" stroke-width="2.5" />
+                    <rect x="20" y="28" width="24" height="12" rx="2" stroke="currentColor" stroke-width="2" />
+                    <circle cx="16" cy="34" r="2.5" fill="currentColor" />
+                    <circle cx="48" cy="34" r="2.5" fill="currentColor" />
+                  </svg></span>
+                <div class="room-name">Board Room</div>
+              </div>
               <span class="room-badge badge-free" id="badge-A">Free</span>
             </div>
             <div class="room-capacity">12 seats</div>
@@ -2514,16 +3235,29 @@
               <span class="feature-tag">Conference Phone</span>
             </div>
             <div class="room-schedule-title">Bookings</div>
+            <div class="room-closed-banner">🚫 This room is temporarily closed by the administrator.</div>
             <div id="schedule-A">
               <div class="no-bookings">No bookings for this date</div>
             </div>
-            <button class="btn-book" onclick="openBookingForm('A')">Book Board Room</button>
+            <button class="btn-book" id="btn-book-A" onclick="openBookingForm('A')">Book Board Room</button>
           </div>
 
           <div class="room-card room-b" id="room-card-B">
             <div class="room-card-accent"></div>
             <div class="room-header">
-              <div class="room-name">Meeting Room</div>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <span class="svg-blue"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    width="28" height="28">
+                    <rect x="10" y="8" width="44" height="48" rx="3" fill="currentColor" opacity="0.12" />
+                    <rect x="10" y="8" width="44" height="48" rx="3" stroke="currentColor" stroke-width="2.5" />
+                    <rect x="24" y="20" width="16" height="22" rx="2" fill="currentColor" opacity="0.15" />
+                    <rect x="24" y="20" width="16" height="22" rx="2" stroke="currentColor" stroke-width="2" />
+                    <circle cx="37" cy="32" r="1.8" fill="currentColor" />
+                    <line x1="10" y1="56" x2="54" y2="56" stroke="currentColor" stroke-width="2.5"
+                      stroke-linecap="round" />
+                  </svg></span>
+                <div class="room-name">Meeting Room</div>
+              </div>
               <span class="room-badge badge-free" id="badge-B">Free</span>
             </div>
             <div class="room-capacity">6 seats</div>
@@ -2531,10 +3265,11 @@
               <span class="feature-tag">Smart Board</span>
             </div>
             <div class="room-schedule-title">Bookings</div>
+            <div class="room-closed-banner">🚫 This room is temporarily closed by the administrator.</div>
             <div id="schedule-B">
               <div class="no-bookings">No bookings for this date</div>
             </div>
-            <button class="btn-book" onclick="openBookingForm('B')">Book Meeting Room</button>
+            <button class="btn-book" id="btn-book-B" onclick="openBookingForm('B')">Book Meeting Room</button>
           </div>
         </div>
 
@@ -2560,11 +3295,12 @@
             </div>
             <div class="form-group">
               <label>Start time</label>
-              <input type="time" id="f-start" onchange="checkAvailability()" />
+              <input type="time" id="f-start" onchange="onTimeChange()" />
             </div>
             <div class="form-group">
               <label>End time</label>
-              <input type="time" id="f-end" onchange="checkAvailability()" />
+              <input type="time" id="f-end" onchange="onTimeChange()" />
+              <div class="duration-hint" id="duration-hint"></div>
             </div>
             <div class="form-group">
               <label>Attendees (emails, comma-separated)</label>
@@ -2573,6 +3309,29 @@
             <div class="form-group full">
               <label>Notes (optional)</label>
               <textarea id="f-notes" placeholder="Agenda, special requirements…"></textarea>
+            </div>
+
+            <!-- Recurring -->
+            <div class="recur-section full">
+              <div class="recur-toggle-row" onclick="toggleRecurring()">
+                <div class="recur-checkbox" id="recur-checkbox"></div>
+                <label>Repeat this booking</label>
+              </div>
+              <div class="recur-options" id="recur-options">
+                <div class="form-group">
+                  <label>Repeat</label>
+                  <select id="recur-freq" onchange="updateRecurPreview()">
+                    <option value="daily">Daily</option>
+                    <option value="weekly" selected>Weekly</option>
+                    <option value="monthly">Monthly</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>End date</label>
+                  <input type="date" id="recur-end-date" onchange="updateRecurPreview()" />
+                </div>
+                <div class="recur-preview" id="recur-preview"></div>
+              </div>
             </div>
           </div>
           <div class="form-actions">
@@ -2617,7 +3376,7 @@
             <div class="form-group"><label>Full name</label><input type="text" id="au-name" placeholder="Full name" />
             </div>
             <div class="form-group"><label>Email</label><input type="email" id="au-email"
-                placeholder="email@company.com" /></div>
+                placeholder="name@takaful.lk" /></div>
             <div class="form-group"><label>Password</label><input type="password" id="au-pass"
                 placeholder="Min. 6 characters" /></div>
             <div class="form-group"><label>Role</label>
@@ -2652,7 +3411,21 @@
         <div class="rooms-config-grid">
           <div class="room-config-card">
             <div class="rcc-header">
-              <span class="rcc-icon">🏛️</span>
+              <span class="rcc-icon svg-accent"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  width="36" height="36">
+                  <rect x="8" y="20" width="48" height="28" rx="4" fill="currentColor" opacity="0.15" />
+                  <rect x="8" y="20" width="48" height="28" rx="4" stroke="currentColor" stroke-width="2.5" />
+                  <rect x="20" y="28" width="24" height="12" rx="2" fill="currentColor" opacity="0.2" />
+                  <rect x="20" y="28" width="24" height="12" rx="2" stroke="currentColor" stroke-width="2" />
+                  <circle cx="16" cy="34" r="2.5" fill="currentColor" />
+                  <circle cx="48" cy="34" r="2.5" fill="currentColor" />
+                  <circle cx="32" cy="26" r="2.5" fill="currentColor" />
+                  <circle cx="32" cy="42" r="2.5" fill="currentColor" />
+                  <line x1="16" y1="48" x2="16" y2="56" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" />
+                  <line x1="48" y1="48" x2="48" y2="56" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" />
+                </svg></span>
               <div>
                 <div class="rcc-name">Board Room</div>
                 <div class="rcc-id">Room A</div>
@@ -2667,10 +3440,26 @@
               <span class="feature-tag">Whiteboard</span>
               <span class="feature-tag">Conference Phone</span>
             </div>
+            <div class="room-toggle-row">
+              <span class="room-toggle-label">Room available for booking</span>
+              <label class="toggle-switch">
+                <input type="checkbox" id="toggle-room-A" checked onchange="toggleRoomClosed('A')"/>
+                <span class="toggle-track"></span>
+              </label>
+            </div>
           </div>
           <div class="room-config-card">
             <div class="rcc-header">
-              <span class="rcc-icon">💼</span>
+              <span class="rcc-icon svg-blue"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  width="36" height="36">
+                  <rect x="10" y="8" width="44" height="48" rx="3" fill="currentColor" opacity="0.12" />
+                  <rect x="10" y="8" width="44" height="48" rx="3" stroke="currentColor" stroke-width="2.5" />
+                  <rect x="24" y="20" width="16" height="22" rx="2" fill="currentColor" opacity="0.15" />
+                  <rect x="24" y="20" width="16" height="22" rx="2" stroke="currentColor" stroke-width="2" />
+                  <circle cx="37" cy="32" r="1.8" fill="currentColor" />
+                  <line x1="10" y1="56" x2="54" y2="56" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" />
+                </svg></span>
               <div>
                 <div class="rcc-name">Meeting Room</div>
                 <div class="rcc-id">Room B</div>
@@ -2682,6 +3471,13 @@
             <div class="rcc-row"><span>Today's bookings</span><strong id="cfg-count-B">—</strong></div>
             <div class="rcc-amenities">
               <span class="feature-tag">Smart Board</span>
+            </div>
+            <div class="room-toggle-row">
+              <span class="room-toggle-label">Room available for booking</span>
+              <label class="toggle-switch">
+                <input type="checkbox" id="toggle-room-B" checked onchange="toggleRoomClosed('B')"/>
+                <span class="toggle-track"></span>
+              </label>
             </div>
           </div>
         </div>
@@ -2756,12 +3552,27 @@
             <div class="an-kpi-label">Total Bookings</div>
           </div>
           <div class="an-kpi-card">
-            <div class="an-kpi-icon">🏛️</div>
+            <div class="an-kpi-icon svg-accent"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                width="28" height="28">
+                <rect x="8" y="20" width="48" height="28" rx="4" fill="currentColor" opacity="0.15" />
+                <rect x="8" y="20" width="48" height="28" rx="4" stroke="currentColor" stroke-width="2.5" />
+                <rect x="20" y="28" width="24" height="12" rx="2" stroke="currentColor" stroke-width="2" />
+                <circle cx="16" cy="34" r="2.5" fill="currentColor" />
+                <circle cx="48" cy="34" r="2.5" fill="currentColor" />
+              </svg></div>
             <div class="an-kpi-val" id="an-room-a">0</div>
             <div class="an-kpi-label">Board Room</div>
           </div>
           <div class="an-kpi-card">
-            <div class="an-kpi-icon">💼</div>
+            <div class="an-kpi-icon svg-blue"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                width="28" height="28">
+                <rect x="10" y="8" width="44" height="48" rx="3" fill="currentColor" opacity="0.12" />
+                <rect x="10" y="8" width="44" height="48" rx="3" stroke="currentColor" stroke-width="2.5" />
+                <rect x="24" y="20" width="16" height="22" rx="2" fill="currentColor" opacity="0.15" />
+                <rect x="24" y="20" width="16" height="22" rx="2" stroke="currentColor" stroke-width="2" />
+                <circle cx="37" cy="32" r="1.8" fill="currentColor" />
+                <line x1="10" y1="56" x2="54" y2="56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+              </svg></div>
             <div class="an-kpi-val" id="an-room-b">0</div>
             <div class="an-kpi-label">Meeting Room</div>
           </div>
@@ -2833,6 +3644,60 @@
   </div>
 
   <!-- TOAST -->
+  <!-- Profile Modal -->
+  <div id="profile-modal-backdrop"
+    style="display:none;position:fixed;inset:0;background:rgba(15,17,23,0.45);z-index:8500;align-items:center;justify-content:center;">
+    <div id="profile-modal"
+      style="background:var(--card);border-radius:var(--radius);padding:0;width:440px;max-width:calc(100vw - 32px);box-shadow:var(--shadow-lg);overflow:hidden;">
+      <!-- Header -->
+      <div style="background:var(--accent);padding:28px 28px 20px;position:relative;">
+        <button onclick="closeProfileModal()"
+          style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.2);border:none;border-radius:50%;width:28px;height:28px;font-size:14px;cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center;">✕</button>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div id="profile-avatar-large"
+            style="width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;color:#fff;font-weight:700;flex-shrink:0;border:2px solid rgba(255,255,255,0.4);">
+            ?</div>
+          <div>
+            <div id="profile-header-name"
+              style="font-family:'Playfair Display',serif;font-size:20px;color:#fff;font-weight:700;"></div>
+            <div id="profile-header-email" style="font-size:12px;color:rgba(255,255,255,0.8);margin-top:2px;"></div>
+            <div id="profile-header-role"
+              style="font-size:11px;color:rgba(255,255,255,0.7);margin-top:4px;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Body -->
+      <div style="padding:24px 28px 28px;">
+        <div class="error-msg" id="profile-error"></div>
+        <div class="success-msg" id="profile-success"></div>
+
+        <div
+          style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.7px;color:var(--ink2);margin-bottom:14px;">
+          Update Name</div>
+        <div style="display:flex;gap:10px;margin-bottom:22px;">
+          <input type="text" id="profile-name-input" placeholder="Full name"
+            style="flex:1;background:var(--paper);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:9px 12px;font-family:'Outfit',sans-serif;font-size:13px;color:var(--ink);outline:none;" />
+          <button onclick="saveProfileName()"
+            style="padding:9px 18px;background:var(--accent);border:none;border-radius:var(--radius-sm);font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;color:#fff;cursor:pointer;">Save</button>
+        </div>
+
+        <div
+          style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.7px;color:var(--ink2);margin-bottom:14px;">
+          Change Password</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <input type="password" id="profile-new-pass" placeholder="New password (min. 6 characters)"
+            style="background:var(--paper);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:9px 12px;font-family:'Outfit',sans-serif;font-size:13px;color:var(--ink);outline:none;" />
+          <input type="password" id="profile-confirm-pass" placeholder="Confirm new password"
+            style="background:var(--paper);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:9px 12px;font-family:'Outfit',sans-serif;font-size:13px;color:var(--ink);outline:none;" />
+          <button onclick="saveProfilePassword()"
+            style="padding:9px 18px;background:var(--paper);border:1.5px solid var(--border);border-radius:var(--radius-sm);font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;color:var(--ink);cursor:pointer;align-self:flex-start;">Update
+            Password</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Edit Booking Modal -->
   <div id="edit-modal-backdrop"
     style="display:none;position:fixed;inset:0;background:rgba(15,17,23,0.45);z-index:8000;align-items:center;justify-content:center;">
@@ -3011,7 +3876,6 @@
       document.getElementById('notif-count').textContent = count;
     }
 
-    // ══════════════════════════════════════════════
     //  AUTH TABS (Login / Register)
     // ══════════════════════════════════════════════
     function switchTab(tab) {
@@ -3031,7 +3895,7 @@
         await handleSession(session, false);
       }
       _supabase.auth.onAuthStateChange(async (event, session) => {
-        if (event === 'SIGNED_IN') {
+        if (event === 'SIGNED_IN' && !_signingUp) {
           await handleSession(session, true);
         } else if (event === 'SIGNED_OUT') {
           currentUser = null;
@@ -3070,7 +3934,12 @@
       const err = document.getElementById('login-error');
       const btn = document.getElementById('login-btn');
 
-      if (!email || !pass) { err.classList.add('show'); return; }
+      if (!email || !pass) { err.textContent = 'Please enter your email and password.'; err.classList.add('show'); return; }
+      if (!email.toLowerCase().endsWith('@takaful.lk')) {
+        err.textContent = 'Only @takaful.lk email addresses are allowed.';
+        err.classList.add('show');
+        return;
+      }
 
       btn.textContent = 'Signing in…';
       btn.disabled = true;
@@ -3081,6 +3950,12 @@
       btn.disabled = false;
 
       if (error) {
+        const msg = error.message.toLowerCase().includes('email') && error.message.toLowerCase().includes('confirm')
+          ? 'Please confirm your email address before signing in.'
+          : error.message.includes('Invalid login')
+            ? 'Incorrect email or password.'
+            : error.message;
+        err.textContent = msg;
         err.classList.add('show');
         document.getElementById('login-password').value = '';
       } else {
@@ -3091,6 +3966,8 @@
     // ══════════════════════════════════════════════
     //  SIGN UP
     // ══════════════════════════════════════════════
+    let _signingUp = false; // flag to suppress auto-login during signup flow
+
     async function doSignup() {
       const name = document.getElementById('signup-name').value.trim();
       const email = document.getElementById('signup-email').value.trim();
@@ -3104,15 +3981,23 @@
 
       if (!name) { err.textContent = 'Please enter your full name.'; err.classList.add('show'); return; }
       if (!email) { err.textContent = 'Please enter your email.'; err.classList.add('show'); return; }
+      if (!email.toLowerCase().endsWith('@takaful.lk')) {
+        err.textContent = 'Only @takaful.lk email addresses are allowed.';
+        err.classList.add('show');
+        return;
+      }
       if (pass.length < 6) { err.textContent = 'Password must be at least 6 characters.'; err.classList.add('show'); return; }
 
       btn.textContent = 'Creating account…';
       btn.disabled = true;
 
-      // Create auth user (email confirm is OFF in your Supabase project)
+      // Suppress the onAuthStateChange SIGNED_IN handler while we handle signup manually
+      _signingUp = true;
+
       const { data: authData, error: authErr } = await _supabase.auth.signUp({ email, password: pass });
 
       if (authErr) {
+        _signingUp = false;
         err.textContent = authErr.message;
         err.classList.add('show');
         btn.textContent = 'Create account';
@@ -3120,24 +4005,46 @@
         return;
       }
 
-      // Insert into profiles
+      // Insert profile BEFORE letting the dashboard load
       if (authData?.user) {
-        await _supabase.from('profiles').insert({
+        const { error: profileErr } = await _supabase.from('profiles').insert({
           id: authData.user.id,
           name: name,
+          email: email,
           role: 'user'
         });
+        if (profileErr) {
+          // Profile table may already have a row if Supabase fired a trigger — ignore duplicate error
+          if (!profileErr.message.includes('duplicate') && !profileErr.message.includes('unique')) {
+            _signingUp = false;
+            err.textContent = 'Account created but profile save failed: ' + profileErr.message;
+            err.classList.add('show');
+            btn.textContent = 'Create account';
+            btn.disabled = false;
+            return;
+          }
+        }
       }
 
       btn.textContent = 'Create account';
       btn.disabled = false;
-      ok.classList.add('show');
-      document.getElementById('signup-name').value = '';
-      document.getElementById('signup-email').value = '';
-      document.getElementById('signup-password').value = '';
+      _signingUp = false;
 
-      // Auto-switch to sign in tab after 1.5s
-      setTimeout(() => { switchTab('signin'); }, 1500);
+      // If Supabase returned a session immediately (email confirm OFF), boot dashboard now
+      if (authData?.session) {
+        ok.classList.add('show');
+        setTimeout(async () => {
+          await handleSession(authData.session, true);
+        }, 800);
+      } else {
+        // Email confirmation is ON — just tell them to check inbox
+        ok.textContent = 'Account created! Please check your email to confirm, then sign in.';
+        ok.classList.add('show');
+        document.getElementById('signup-name').value = '';
+        document.getElementById('signup-email').value = '';
+        document.getElementById('signup-password').value = '';
+        setTimeout(() => { switchTab('signin'); }, 2500);
+      }
     }
 
     //  LOGOUT
@@ -3192,14 +4099,16 @@
       const mobManageTab = document.getElementById('mob-tab-manage');
       const mobBookingsTab = document.getElementById('mob-tab-bookings');
       const mobAnalyticsTab = document.getElementById('mob-tab-analytics');
-      const isAdmin = currentUser.role === 'admin' || currentUser.role === 'Co - Admin';
+      const isAdmin   = currentUser.role === 'admin';
+      const isCoAdmin = currentUser.role === 'Co - Admin';
+      const isPrivileged = isAdmin || isCoAdmin;
 
       // Bookings tab — everyone sees it
       bookingsTab.style.display = '';
       if (mobBookingsTab) mobBookingsTab.style.display = '';
 
       // Analytics + People & Rooms — admin/co-admin only
-      if (isAdmin) {
+      if (isPrivileged) {
         manageTab.style.display = '';
         analyticsTab.style.display = '';
         if (mobManageTab) mobManageTab.style.display = '';
@@ -3223,6 +4132,7 @@
 
       refreshSchedules();
       updateStats();
+      restoreRoomClosedState();
     }
 
     // ══════════════════════════════════════════════
@@ -3262,16 +4172,21 @@
           document.getElementById('badge-' + room).textContent = isBusy ? 'In Use' : 'Free';
 
           el.innerHTML = day.map(b => {
-            const canCancel = currentUser && (
-              currentUser.role === 'admin' ||
-              currentUser.role === 'Co - Admin' ||
-              b.user_id === currentUser.id
-            );
-            return `<div class="booking-slot">
+            const isPrivileged = currentUser && (currentUser.role === 'admin' || currentUser.role === 'Co - Admin');
+            const canCancel = currentUser && (isPrivileged || b.user_id === currentUser.id);
+            const isOwn = b.user_id === currentUser.id;
+            return `<div class="booking-slot ${isOwn ? 'slot-own' : ''}">
           <div class="slot-dot"></div>
-          <span class="slot-time">${fmt12(b.start)} – ${fmt12(b.end)}</span>
-          <span class="slot-title">${b.title}</span>
-          <span class="slot-organizer">${b.organizer}</span>
+          <div class="slot-main">
+            <div class="slot-top-row">
+              <span class="slot-time">${fmt12(b.start)} – ${fmt12(b.end)}</span>
+              <span class="slot-title">${b.title}</span>
+            </div>
+            <div class="slot-booker-row">
+              <div class="slot-booker-avatar">${initials(b.organizer || '?')}</div>
+              <span class="slot-organizer">${b.organizer || 'Unknown'}${isOwn ? ' <span class="slot-you-tag">You</span>' : ''}</span>
+            </div>
+          </div>
           ${canCancel ? `<button class="cancel-btn" onclick="cancelBooking('${b.id}')">Cancel</button>` : ''}
         </div>`;
           }).join('');
@@ -3305,7 +4220,70 @@
     // ══════════════════════════════════════════════
     //  BOOKING FORM
     // ══════════════════════════════════════════════
+    // ══════════════════════════════════════════════
+    //  ROOM CLOSED STATE
+    // ══════════════════════════════════════════════
+    const roomClosed = { A: false, B: false };
+
+    function toggleRoomClosed(room) {
+      if (currentUser.role !== 'admin') {
+        toast('Only admins can close or open rooms.', 'warning');
+        document.getElementById('toggle-room-' + room).checked = !roomClosed[room];
+        return;
+      }
+      const isOpen = document.getElementById('toggle-room-' + room).checked;
+      roomClosed[room] = !isOpen;
+      localStorage.setItem('br-room-closed-' + room, roomClosed[room] ? '1' : '0');
+      applyRoomClosedState(room);
+      const label = roomLabel(room);
+      if (roomClosed[room]) {
+        toast(label + ' has been temporarily closed.', 'warning');
+        addNotification(`<strong>${currentUser.name}</strong> closed <strong>${label}</strong> for bookings.`, 'dot-red');
+      } else {
+        toast(label + ' is now open for bookings.', 'success');
+        addNotification(`<strong>${currentUser.name}</strong> reopened <strong>${label}</strong> for bookings.`, 'dot-green');
+      }
+    }
+
+    function applyRoomClosedState(room) {
+      const card = document.getElementById('room-card-' + room);
+      const btn  = document.getElementById('btn-book-' + room);
+      const badge = document.getElementById('badge-' + room);
+
+      if (roomClosed[room]) {
+        card.classList.add('room-closed');
+        btn.classList.add('btn-closed');
+        btn.textContent = '🚫 Temporarily Closed';
+        badge.className = 'room-badge badge-closed';
+        badge.textContent = 'Closed';
+      } else {
+        card.classList.remove('room-closed');
+        btn.classList.remove('btn-closed');
+        btn.textContent = room === 'A' ? 'Book Board Room' : 'Book Meeting Room';
+        // badge will be refreshed by refreshSchedules()
+        refreshSchedules();
+      }
+    }
+
+    function restoreRoomClosedState() {
+      ['A', 'B'].forEach(room => {
+        const saved = localStorage.getItem('br-room-closed-' + room);
+        if (saved === '1') {
+          roomClosed[room] = true;
+          const toggle = document.getElementById('toggle-room-' + room);
+          if (toggle) toggle.checked = false;
+          applyRoomClosedState(room);
+        }
+      });
+    }
+
     function openBookingForm(room) {
+      // Guard: block booking if room is closed
+      if (roomClosed[room]) {
+        toast(roomLabel(room) + ' is temporarily closed and cannot be booked.', 'warning');
+        return;
+      }
+
       selectedRoom = room;
       document.getElementById('form-room-title').textContent = 'Book ' + roomLabel(room);
       document.getElementById('f-title').value = '';
@@ -3314,6 +4292,14 @@
       document.getElementById('f-attendees').value = '';
       document.getElementById('f-notes').value = '';
       document.getElementById('avail-msg').className = 'availability-msg';
+      document.getElementById('duration-hint').textContent = '';
+      document.getElementById('duration-hint').className = 'duration-hint';
+      // Reset recurring
+      document.getElementById('recur-checkbox').classList.remove('checked');
+      document.getElementById('recur-options').classList.remove('open');
+      document.getElementById('recur-end-date').value = '';
+      document.getElementById('recur-freq').value = 'weekly';
+      document.getElementById('recur-preview').textContent = '';
       const sec = document.getElementById('booking-form-section');
       sec.classList.add('show');
       sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -3324,6 +4310,42 @@
       selectedRoom = null;
     }
 
+    const BUFFER_MINS = 10;   // buffer between meetings
+    const MIN_MINS = 30;   // minimum booking duration
+    const MAX_MINS = 480;  // maximum booking duration (8 hours)
+
+    function toMins(t) {
+      const [h, m] = t.split(':').map(Number);
+      return h * 60 + m;
+    }
+
+    function onTimeChange() {
+      updateDurationHint();
+      checkAvailability();
+    }
+
+    function updateDurationHint() {
+      const start = document.getElementById('f-start').value;
+      const end = document.getElementById('f-end').value;
+      const hint = document.getElementById('duration-hint');
+      if (!start || !end) { hint.textContent = ''; hint.className = 'duration-hint'; return; }
+      const diff = toMins(end) - toMins(start);
+      if (diff <= 0) { hint.textContent = ''; hint.className = 'duration-hint'; return; }
+      const hrs = Math.floor(diff / 60);
+      const mins = diff % 60;
+      const label = hrs > 0 ? `${hrs}h ${mins > 0 ? mins + 'm' : ''}`.trim() : `${mins}m`;
+      if (diff < MIN_MINS) {
+        hint.textContent = `${label} — minimum is 30 minutes`;
+        hint.className = 'duration-hint warn';
+      } else if (diff > MAX_MINS) {
+        hint.textContent = `${label} — maximum is 8 hours`;
+        hint.className = 'duration-hint warn';
+      } else {
+        hint.textContent = `Duration: ${label}`;
+        hint.className = 'duration-hint ok';
+      }
+    }
+
     function checkAvailability() {
       const date = document.getElementById('f-date').value;
       const start = document.getElementById('f-start').value;
@@ -3331,17 +4353,95 @@
       const msg = document.getElementById('avail-msg');
 
       if (!date || !start || !end || !selectedRoom) { msg.className = 'availability-msg'; return; }
-      if (start >= end) { msg.className = 'availability-msg busy'; msg.textContent = 'End time must be after start time.'; return; }
+      if (start >= end) {
+        msg.className = 'availability-msg busy';
+        msg.textContent = 'End time must be after start time.';
+        return;
+      }
 
-      const conflict = bookings.find(b =>
+      // Check buffer: expand the window we test by BUFFER_MINS on each side
+      const startMins = toMins(start);
+      const endMins = toMins(end);
+      const bufStart = minsToStr(Math.max(0, startMins - BUFFER_MINS));
+      const bufEnd = minsToStr(endMins + BUFFER_MINS);
+
+      const bufferConflict = bookings.find(b =>
+        b.room === selectedRoom && b.date === date && timesOverlap(bufStart, bufEnd, b.start, b.end)
+      );
+      const directConflict = bookings.find(b =>
         b.room === selectedRoom && b.date === date && timesOverlap(start, end, b.start, b.end)
       );
-      if (conflict) {
+
+      if (directConflict) {
         msg.className = 'availability-msg busy';
-        msg.textContent = `${roomLabel(selectedRoom)} is booked ${fmt12(conflict.start)}–${fmt12(conflict.end)} (${conflict.title}).`;
+        msg.textContent = `${roomLabel(selectedRoom)} is booked ${fmt12(directConflict.start)}–${fmt12(directConflict.end)} (${directConflict.title}).`;
+      } else if (bufferConflict) {
+        msg.className = 'availability-msg busy';
+        msg.textContent = `Slot available but within 10-min buffer of "${bufferConflict.title}" (${fmt12(bufferConflict.start)}–${fmt12(bufferConflict.end)}).`;
       } else {
         msg.className = 'availability-msg free';
         msg.textContent = `${roomLabel(selectedRoom)} is available for this slot. ✓`;
+      }
+    }
+
+    function minsToStr(m) {
+      return String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0');
+    }
+
+    // ══════════════════════════════════════════════
+    //  RECURRING HELPERS
+    // ══════════════════════════════════════════════
+    function toggleRecurring() {
+      const cb = document.getElementById('recur-checkbox');
+      const opts = document.getElementById('recur-options');
+      const isOn = cb.classList.toggle('checked');
+      opts.classList.toggle('open', isOn);
+      if (isOn) {
+        // default end date = 4 weeks from selected date
+        const base = document.getElementById('f-date').value;
+        if (base) {
+          const d = new Date(base + 'T00:00');
+          d.setDate(d.getDate() + 28);
+          document.getElementById('recur-end-date').value = d.toISOString().slice(0, 10);
+        }
+        updateRecurPreview();
+      } else {
+        document.getElementById('recur-preview').textContent = '';
+      }
+    }
+
+    function generateRecurDates(baseDate, freq, endDate) {
+      const dates = [];
+      const end = new Date(endDate + 'T00:00');
+      let cur = new Date(baseDate + 'T00:00');
+
+      // start from the day AFTER the base booking
+      if (freq === 'daily') cur.setDate(cur.getDate() + 1);
+      else if (freq === 'weekly') cur.setDate(cur.getDate() + 7);
+      else if (freq === 'monthly') cur.setMonth(cur.getMonth() + 1);
+
+      while (cur <= end && dates.length < 60) {
+        dates.push(cur.toISOString().slice(0, 10));
+        if (freq === 'daily') cur.setDate(cur.getDate() + 1);
+        else if (freq === 'weekly') cur.setDate(cur.getDate() + 7);
+        else if (freq === 'monthly') cur.setMonth(cur.getMonth() + 1);
+      }
+      return dates;
+    }
+
+    function updateRecurPreview() {
+      const base = document.getElementById('f-date').value;
+      const freq = document.getElementById('recur-freq').value;
+      const endDate = document.getElementById('recur-end-date').value;
+      const preview = document.getElementById('recur-preview');
+      if (!base || !endDate) { preview.textContent = ''; return; }
+      const dates = generateRecurDates(base, freq, endDate);
+      if (dates.length === 0) {
+        preview.textContent = 'No occurrences — end date must be after booking date.';
+        preview.style.color = 'var(--accent)';
+      } else {
+        preview.textContent = `Will create ${dates.length} additional occurrence${dates.length !== 1 ? 's' : ''} (${freq})`;
+        preview.style.color = 'var(--green)';
       }
     }
 
@@ -3355,32 +4455,75 @@
       const end = document.getElementById('f-end').value;
       const attendees = document.getElementById('f-attendees').value.trim();
       const notes = document.getElementById('f-notes').value.trim();
+      const isRecur = document.getElementById('recur-checkbox').classList.contains('checked');
+      const recurFreq = document.getElementById('recur-freq').value;
+      const recurEnd = document.getElementById('recur-end-date').value;
 
       if (!title) { toast('Please enter a meeting title.', 'warning'); return; }
       if (!date) { toast('Please select a date.', 'warning'); return; }
       if (!start || !end) { toast('Please set start and end times.', 'warning'); return; }
       if (start >= end) { toast('End time must be after start time.', 'warning'); return; }
 
-      const conflict = bookings.find(b =>
-        b.room === selectedRoom && b.date === date && timesOverlap(start, end, b.start, b.end)
+      // Min / max duration
+      const durMins = toMins(end) - toMins(start);
+      if (durMins < MIN_MINS) { toast(`Minimum booking duration is 30 minutes.`, 'warning'); return; }
+      if (durMins > MAX_MINS) { toast(`Maximum booking duration is 8 hours.`, 'warning'); return; }
+
+      // Buffer check
+      const bufStart = minsToStr(Math.max(0, toMins(start) - BUFFER_MINS));
+      const bufEnd = minsToStr(toMins(end) + BUFFER_MINS);
+      const bufConflict = bookings.find(b =>
+        b.room === selectedRoom && b.date === date && timesOverlap(bufStart, bufEnd, b.start, b.end)
       );
-      if (conflict) { toast('This slot is already booked!', 'warning'); return; }
+      if (bufConflict) {
+        // If it's a direct overlap, hard-block. If buffer only, warn and block.
+        const direct = timesOverlap(start, end, bufConflict.start, bufConflict.end);
+        if (direct) {
+          toast('This slot is already booked!', 'warning');
+        } else {
+          toast(`Less than 10-min gap before/after "${bufConflict.title}". Please leave a 10-minute buffer.`, 'warning');
+        }
+        return;
+      }
+
+      // Build list of all dates to book
+      const allDates = [date];
+      if (isRecur && recurEnd) {
+        if (!recurEnd) { toast('Please set a recurring end date.', 'warning'); return; }
+        const extra = generateRecurDates(date, recurFreq, recurEnd);
+        allDates.push(...extra);
+      }
 
       const btn = document.getElementById('confirm-btn');
       btn.textContent = 'Saving…';
       btn.disabled = true;
 
-      const { error } = await _supabase.from('bookings').insert({
-        room: selectedRoom,
-        title,
-        date,
-        start_time: start,
-        end_time: end,
+      // Check conflicts on ALL recurring dates upfront
+      const conflictDates = [];
+      for (const d of allDates) {
+        const c = bookings.find(b =>
+          b.room === selectedRoom && b.date === d &&
+          timesOverlap(minsToStr(Math.max(0, toMins(start) - BUFFER_MINS)), minsToStr(toMins(end) + BUFFER_MINS), b.start, b.end)
+        );
+        if (c) conflictDates.push(d);
+      }
+      if (conflictDates.length > 0) {
+        btn.textContent = 'Confirm booking'; btn.disabled = false;
+        toast(`Conflict on ${conflictDates.length} date(s) including ${conflictDates[0]}. Adjust the schedule.`, 'warning');
+        return;
+      }
+
+      // Insert all rows
+      const rows = allDates.map(d => ({
+        room: selectedRoom, title, date: d,
+        start_time: start, end_time: end,
         attendees: attendees || null,
         notes: notes || null,
         booked_by: currentUser.id,
         booked_by_name: currentUser.name
-      });
+      }));
+
+      const { error } = await _supabase.from('bookings').insert(rows);
 
       btn.textContent = 'Confirm booking';
       btn.disabled = false;
@@ -3394,24 +4537,18 @@
       updateStats();
 
       const dateStr = new Date(date + 'T00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      const recurNote = allDates.length > 1 ? ` (+${allDates.length - 1} recurring)` : '';
       addNotification(
-        `<strong>${currentUser.name}</strong> booked <strong>${roomLabel(bookedRoom)}</strong> on ${dateStr} from ${fmt12(start)} to ${fmt12(end)} — <em>${title}</em>`,
+        `<strong>${currentUser.name}</strong> booked <strong>${roomLabel(bookedRoom)}</strong> on ${dateStr} ${fmt12(start)}–${fmt12(end)} — <em>${title}</em>${recurNote}`,
         'dot-blue'
       );
-      toast(`${roomLabel(bookedRoom)} booked successfully!`, 'success');
+      toast(`${roomLabel(bookedRoom)} booked! ${allDates.length > 1 ? `(${allDates.length} occurrences)` : ''}`, 'success');
 
-      // ── Email notification ──
+      // Email for primary booking only
       notifyAll({
-        type: 'Booking Confirmation',
-        room: bookedRoom,
-        title,
-        date,
-        startTime: start,
-        endTime: end,
-        organizer: currentUser.name,
-        organizerEmail: currentUser.email,
-        attendeesRaw: attendees,
-        notes
+        type: 'Booking Confirmation', room: bookedRoom, title, date, startTime: start,
+        endTime: end, organizer: currentUser.name, organizerEmail: currentUser.email,
+        attendeesRaw: attendees, notes
       });
     }
 
@@ -3529,6 +4666,7 @@
         const { error: profileErr } = await _supabase.from('profiles').insert({
           id: authData.user.id,
           name,
+          email,
           role
         });
         if (profileErr) {
@@ -3551,10 +4689,10 @@
       const container = document.getElementById('users-rows');
       container.innerHTML = '<div style="padding:20px;text-align:center;color:var(--ink2);font-size:13px;">Loading…</div>';
 
-      const { data, error } = await _supabase.from('profiles').select('*').order('name');
+      const { data, error } = await _supabase.from('profiles').select('id, name, role').order('name');
 
       if (error || !data) {
-        container.innerHTML = '<div style="padding:20px;text-align:center;color:var(--accent);font-size:13px;">Could not load users.</div>';
+        container.innerHTML = '<div style="padding:20px;text-align:center;color:var(--accent);font-size:13px;">Could not load users. Check RLS policies.</div>';
         return;
       }
 
@@ -3563,22 +4701,41 @@
         return;
       }
 
-      const roleClass = r => r === 'admin' ? 'role-admin' : r === 'Co - Admin' ? 'role-co-admin' : 'role-user';
-      const roleLabel = r => r === 'Co - Admin' ? 'Co-Admin' : r.charAt(0).toUpperCase() + r.slice(1);
+      const roleClass  = r => r === 'admin' ? 'role-admin' : r === 'Co - Admin' ? 'role-co-admin' : 'role-user';
+      const roleLabel  = r => r === 'admin' ? 'Admin' : r === 'Co - Admin' ? 'Co-Admin' : 'User';
 
-      container.innerHTML = data.map(u => `
+      // Only admin can change roles; co-admin can see but not change
+      const canChangeRoles = currentUser.role === 'admin';
+
+      container.innerHTML = data.map(u => {
+        const isSelf = u.id === currentUser.id;
+        return `
     <div class="user-row">
       <div class="user-name-cell">
         <div class="user-avatar-sm">${initials(u.name)}</div>
-        <span class="user-name-text">${u.name || '—'}</span>
+        <div>
+          <div class="user-name-text">${u.name || '—'}${isSelf ? ' <span class="you-badge">You</span>' : ''}</div>
+          <div style="font-size:11px;color:var(--ink2);margin-top:1px;">${u.id.slice(0, 22)}…</div>
+        </div>
       </div>
-      <div class="user-email">${u.id}</div>
-      <div><span class="role-pill ${roleClass(u.role)}">${roleLabel(u.role)}</span></div>
+      <div class="user-email" style="font-size:12px;color:var(--ink2);">—</div>
+      <div>
+        ${(isSelf || !canChangeRoles)
+            ? `<span class="role-pill ${roleClass(u.role)}">${roleLabel(u.role)}</span>`
+            : `<select class="role-select" onchange="changeUserRole('${u.id}', this.value)">
+                <option value="user"       ${u.role === 'user'       ? 'selected' : ''}>User</option>
+                <option value="Co - Admin" ${u.role === 'Co - Admin' ? 'selected' : ''}>Co-Admin</option>
+                <option value="admin"      ${u.role === 'admin'      ? 'selected' : ''}>Admin</option>
+              </select>`
+          }
+      </div>
       <div class="user-actions">
-        <button class="btn-icon" onclick="deleteUser('${u.id}', '${(u.name || '').replace(/'/g, "\\'")}')">Remove</button>
+        ${(!isSelf && canChangeRoles)
+            ? `<button class="btn-icon" onclick="deleteUser('${u.id}', '${(u.name || '').replace(/'/g, "\\'")}')">Remove</button>`
+            : '<span style="font-size:12px;color:var(--ink2);">—</span>'}
       </div>
     </div>
-  `).join('');
+  `}).join('');
     }
 
     async function deleteUser(id, name) {
@@ -3633,11 +4790,27 @@
       if (!date || !start || !end) { toast('Date and times required.', 'warning'); return; }
       if (start >= end) { toast('End must be after start.', 'warning'); return; }
 
-      // Conflict check (exclude self)
+      // Min / max duration
+      const durMins = toMins(end) - toMins(start);
+      if (durMins < MIN_MINS) { toast('Minimum booking duration is 30 minutes.', 'warning'); return; }
+      if (durMins > MAX_MINS) { toast('Maximum booking duration is 8 hours.', 'warning'); return; }
+
+      // Buffer + conflict check (exclude self)
+      const bufStart = minsToStr(Math.max(0, toMins(start) - BUFFER_MINS));
+      const bufEnd = minsToStr(toMins(end) + BUFFER_MINS);
       const conflict = bookings.find(b =>
-        b.id !== id && b.room === room && b.date === date && timesOverlap(start, end, b.start, b.end)
+        b.id !== id && b.room === room && b.date === date &&
+        timesOverlap(bufStart, bufEnd, b.start, b.end)
       );
-      if (conflict) { toast('Slot conflicts with another booking.', 'warning'); return; }
+      if (conflict) {
+        const direct = timesOverlap(start, end, conflict.start, conflict.end);
+        if (direct) {
+          toast('Slot conflicts with another booking.', 'warning');
+        } else {
+          toast(`Less than 10-min gap with "${conflict.title}". Please leave a buffer.`, 'warning');
+        }
+        return;
+      }
 
       const { error } = await _supabase.from('bookings').update({
         title, room, date,
@@ -3735,7 +4908,9 @@
       document.getElementById('bm-footer').textContent = `Showing ${filtered.length} of ${totalPool} booking${totalPool !== 1 ? 's' : ''}`;
     }
 
+    // ══════════════════════════════════════════════
     //  ANALYTICS
+    // ══════════════════════════════════════════════
     function renderAnalytics() {
       if (!bookings.length) return;
 
@@ -3788,7 +4963,6 @@
       }
       const maxVal = Math.max(...days.map(d => d.cA + d.cB), 1);
       const chartEl = document.getElementById('an-daily-chart');
-
       chartEl.innerHTML = days.map(d => {
         const hA = Math.round((d.cA / maxVal) * 100);
         const hB = Math.round((d.cB / maxVal) * 100);
@@ -3865,12 +5039,151 @@
     // Also refresh analytics/bookings table after booking changes
     const _origLoadBookings = loadBookings;
 
+    // ══════════════════════════════════════════════
+    //  PROFILE MODAL
+    // ══════════════════════════════════════════════
+    function openProfileModal() {
+      document.getElementById('profile-avatar-large').textContent = initials(currentUser.name);
+      document.getElementById('profile-header-name').textContent = currentUser.name;
+      document.getElementById('profile-header-email').textContent = currentUser.email;
+      document.getElementById('profile-header-role').textContent =
+        currentUser.role === 'Co - Admin' ? 'Co-Admin' : currentUser.role;
+      document.getElementById('profile-name-input').value = currentUser.name;
+      document.getElementById('profile-new-pass').value = '';
+      document.getElementById('profile-confirm-pass').value = '';
+      document.getElementById('profile-error').classList.remove('show');
+      document.getElementById('profile-success').classList.remove('show');
+      document.getElementById('profile-modal-backdrop').style.display = 'flex';
+      setTimeout(() => document.getElementById('profile-name-input').focus(), 80);
+    }
+
+    function closeProfileModal() {
+      document.getElementById('profile-modal-backdrop').style.display = 'none';
+    }
+
+    async function saveProfileName() {
+      const name = document.getElementById('profile-name-input').value.trim();
+      const err = document.getElementById('profile-error');
+      const ok = document.getElementById('profile-success');
+      err.classList.remove('show'); ok.classList.remove('show');
+
+      if (!name) { err.textContent = 'Name cannot be empty.'; err.classList.add('show'); return; }
+
+      // Try update first (row exists)
+      const { data: updateData, error: updateError } = await _supabase
+        .from('profiles')
+        .update({ name })
+        .eq('id', currentUser.id)
+        .select();
+
+      // If update affected 0 rows, the profile row doesn't exist yet — insert it
+      if (!updateError && (!updateData || updateData.length === 0)) {
+        const { error: insertError } = await _supabase
+          .from('profiles')
+          .insert({ id: currentUser.id, name, role: currentUser.role || 'user' });
+        if (insertError) {
+          err.textContent = 'Could not save name: ' + insertError.message;
+          err.classList.add('show');
+          return;
+        }
+      } else if (updateError) {
+        err.textContent = 'Could not save name: ' + updateError.message;
+        err.classList.add('show');
+        return;
+      }
+
+      currentUser.name = name;
+      document.getElementById('nav-username').textContent = name;
+      document.getElementById('nav-avatar').textContent = initials(name);
+      document.getElementById('profile-avatar-large').textContent = initials(name);
+      document.getElementById('profile-header-name').textContent = name;
+      document.getElementById('f-organizer').value = name;
+      ok.textContent = 'Name updated successfully!';
+      ok.classList.add('show');
+      toast('Profile name updated!', 'success');
+    }
+
+    async function saveProfilePassword() {
+      const newPass = document.getElementById('profile-new-pass').value;
+      const confirm = document.getElementById('profile-confirm-pass').value;
+      const err = document.getElementById('profile-error');
+      const ok = document.getElementById('profile-success');
+      err.classList.remove('show'); ok.classList.remove('show');
+
+      if (newPass.length < 6) { err.textContent = 'Password must be at least 6 characters.'; err.classList.add('show'); return; }
+      if (newPass !== confirm) { err.textContent = 'Passwords do not match.'; err.classList.add('show'); return; }
+
+      const { error } = await _supabase.auth.updateUser({ password: newPass });
+      if (error) { err.textContent = error.message; err.classList.add('show'); return; }
+
+      document.getElementById('profile-new-pass').value = '';
+      document.getElementById('profile-confirm-pass').value = '';
+      ok.textContent = 'Password changed successfully!';
+      ok.classList.add('show');
+      toast('Password updated!', 'success');
+    }
+
+    // Close profile modal on backdrop click
+    document.getElementById('profile-modal-backdrop').addEventListener('click', function (e) {
+      if (e.target === this) closeProfileModal();
+    });
+
+    // ══════════════════════════════════════════════
+    //  CHANGE USER ROLE (admin only)
+    // ══════════════════════════════════════════════
+    async function changeUserRole(userId, newRole) {
+      if (currentUser.role !== 'admin') {
+        toast('Only admins can change roles.', 'warning');
+        await loadUsers();
+        return;
+      }
+      const { error } = await _supabase
+        .from('profiles')
+        .update({ role: newRole })
+        .eq('id', userId);
+
+      if (error) {
+        toast('Error updating role: ' + error.message, 'warning');
+        await loadUsers();
+        return;
+      }
+      const label = newRole === 'admin' ? 'Admin' : newRole === 'Co - Admin' ? 'Co-Admin' : 'User';
+      toast('Role updated to ' + label + '.', 'success');
+      await loadUsers();
+    }
+
+    // ══════════════════════════════════════════════
+    //  DARK MODE
+    // ══════════════════════════════════════════════
+    function toggleTheme() {
+      const isDark = document.body.classList.toggle('dark');
+      localStorage.setItem('br-theme', isDark ? 'dark' : 'light');
+      document.getElementById('theme-icon-moon').style.display = isDark ? 'none' : '';
+      document.getElementById('theme-icon-sun').style.display = isDark ? '' : 'none';
+    }
+
+    // Apply saved theme on load
+    (function () {
+      if (localStorage.getItem('br-theme') === 'dark') {
+        document.body.classList.add('dark');
+        const moon = document.getElementById('theme-icon-moon');
+        const sun = document.getElementById('theme-icon-sun');
+        if (moon) moon.style.display = 'none';
+        if (sun) sun.style.display = '';
+      }
+    })();
+
+    // ══════════════════════════════════════════════
     //  KEYBOARD SHORTCUTS
+    // ══════════════════════════════════════════════
     document.getElementById('login-password').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
     document.getElementById('login-email').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('login-password').focus(); });
     document.getElementById('signup-password').addEventListener('keydown', e => { if (e.key === 'Enter') doSignup(); });
 
+    // ══════════════════════════════════════════════
     //  BOOT
+    // ══════════════════════════════════════════════
+    // Close cancel modal on backdrop click or Escape
     document.getElementById('cancel-modal-backdrop').addEventListener('click', function (e) {
       if (e.target === this) closeCancelModal();
     });
@@ -3879,31 +5192,6 @@
         closeCancelModal();
       }
     });
-
-    //  DARK MODE
-    function toggleDarkMode() {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      const newTheme = isDark ? 'light' : 'dark';
-      const icon = newTheme === 'dark' ? '☀️' : '🌙';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      const navBtn = document.getElementById('dark-toggle-btn');
-      const loginBtn = document.getElementById('login-dark-toggle');
-      if (navBtn) navBtn.textContent = icon;
-      if (loginBtn) loginBtn.textContent = icon;
-      localStorage.setItem('br-theme', newTheme);
-    }
-
-    // Restore saved theme on load
-    (function () {
-      const saved = localStorage.getItem('br-theme');
-      if (saved === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        const navBtn = document.getElementById('dark-toggle-btn');
-        const loginBtn = document.getElementById('login-dark-toggle');
-        if (navBtn) navBtn.textContent = '☀️';
-        if (loginBtn) loginBtn.textContent = '☀️';
-      }
-    })();
 
     initAuth();
   </script>
