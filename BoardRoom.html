@@ -4740,12 +4740,30 @@
 
     async function deleteUser(id, name) {
       if (id === currentUser.id) { toast("You can't remove yourself.", 'warning'); return; }
-      if (!confirm(`Remove user "${name}"? This only removes their profile record.`)) return;
+      if (!confirm(`Remove user "${name}"? This will permanently delete their account.`)) return;
 
-      const { error } = await _supabase.from('profiles').delete().eq('id', id);
-      if (error) { toast('Error: ' + error.message, 'warning'); return; }
+      // Step 1: Delete profile row from profiles table
+      const { error: profileErr } = await _supabase.from('profiles').delete().eq('id', id);
+      if (profileErr) { toast('Error removing profile: ' + profileErr.message, 'warning'); return; }
 
-      toast(`${name} removed.`, 'info');
+      // Step 2: Delete from Supabase Auth via Netlify function (requires service role)
+      try {
+        const res = await fetch('/.netlify/functions/delete-user', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userId: id })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Auth delete failed');
+      } catch (err) {
+        // Profile is already deleted — warn but don't block
+        console.warn('[deleteUser] Auth deletion failed:', err.message);
+        toast(`${name}'s profile removed but auth account may still exist. Contact admin.`, 'warning');
+        await loadUsers();
+        return;
+      }
+
+      toast(`${name} has been permanently removed.`, 'info');
       await loadUsers();
     }
 
@@ -5192,6 +5210,32 @@
         closeCancelModal();
       }
     });
+
+    // ══════════════════════════════════════════════
+    //  CREATOR SIGNATURE
+    // ══════════════════════════════════════════════
+    console.log('%c', 'font-size:0');
+    console.log(
+      '%c  BoardRoom  ',
+      'background: #1a1a2e; color: #e8c97e; font-size: 20px; font-weight: bold; font-family: serif; padding: 8px 20px; border-radius: 4px; letter-spacing: 2px;'
+    );
+    console.log(
+      '%c  Meeting Space Booking System  ',
+      'background: #16213e; color: #a0aec0; font-size: 11px; font-family: monospace; padding: 4px 20px; border-radius: 4px; letter-spacing: 1px;'
+    );
+    console.log(
+      '%c  Built by Piragatheesan · Takaful Lanka  ',
+      'color: #e8c97e; font-size: 11px; font-family: monospace; padding: 2px 0;'
+    );
+    console.log(
+      '%c  github.com/piragatheesan/boardroom-booking  ',
+      'color: #4a9eff; font-size: 11px; font-family: monospace; padding: 2px 0; text-decoration: underline;'
+    );
+    console.log(
+      '%c  v1.0 · Supabase + Netlify · 2025  ',
+      'color: #68d391; font-size: 10px; font-family: monospace; padding: 2px 0 6px 0;'
+    );
+    console.log('%c', 'font-size:0');
 
     initAuth();
   </script>
